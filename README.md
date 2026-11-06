@@ -1,7 +1,14 @@
 # Machine Learning Assignment 2
 ## Bank Marketing Subscription Prediction
 
-### 1. Project Overview
+### A. Problem Statement
+The objective of this project is to develop a machine learning classification system that predicts whether a bank customer will subscribe to a term deposit based on their demographic, financial, and marketing campaign-related information.
+
+Using the UCI Bank Marketing Dataset, the project implements five supervised classification algorithms: Logistic Regression, Decision Tree, K-Nearest Neighbors (KNN), Gaussian Naive Bayes, and Support Vector Machine (SVM).
+
+The models are evaluated and compared using Accuracy, AUC, Precision, Recall, F1 Score, and Matthews Correlation Coefficient (MCC). The goal is to identify the most suitable model for predicting customer subscriptions, considering the class imbalance in the dataset.
+
+An interactive Streamlit application is also developed to allow users to upload test data, generate predictions, and evaluate the performance of the trained models.
 
 This project implements and compares five supervised machine learning classification algorithms to predict whether a customer will subscribe to a term deposit based on their banking and demographic information.
 
@@ -9,7 +16,7 @@ The project uses the **Bank Marketing Dataset from the UCI Machine Learning Repo
 
 The objective is to identify a suitable classification model and understand how different algorithms perform on the same dataset.
 
-### 2. Dataset Description
+### B. Dataset Description
 
 **Dataset:** Bank Marketing Dataset  
 **Source:** UCI Machine Learning Repository  
@@ -24,41 +31,22 @@ The target variable represents whether a customer subscribed to a term deposit:
 
 The dataset contains demographic, financial, and campaign-related information.
 
-**Feature Engineering:**
+### C. Live Application
 
-The `duration` feature was excluded from model training because call duration is only known after the marketing call. Including it would introduce target leakage when predicting subscription before a call takes place.
+**Streamlit Application:**  
+https://rohit-bits-ml-assignment-2.streamlit.app/
 
-The remaining 15 input features are used for model training.
+**GitHub Repository:**  
+https://github.com/rohittotad2745/BITS-ML-Assignment-2
 
-### 3. Machine Learning Models
+### D. Models Used
 
-The following five classification algorithms were implemented and evaluated:
-
-1. Logistic Regression
-2. Decision Tree Classifier
-3. K-Nearest Neighbors (KNN)
-4. Gaussian Naive Bayes
-5. Support Vector Machine (SVM)
-
-All five models were trained using the same training dataset and evaluated using the same test dataset.
-
-### 4. Data Preprocessing
-
-The following preprocessing steps were performed:
-
-- Separated input features and target variable.
-- Excluded the `duration` feature to prevent target leakage.
-- Encoded the target variable (`no` = 0, `yes` = 1).
-- Split the dataset into training and testing sets using an 80:20 ratio.
-- Used stratified sampling to preserve the target class distribution.
-- Applied StandardScaler to numerical features.
-- Applied OneHotEncoder to categorical features.
-- Used a ColumnTransformer to combine the preprocessing steps.
-
-The preprocessing pipeline was fitted only on the training dataset to avoid data leakage.
-
-### 5. Model Evaluation
-
+- **Logistic Regression**
+- **Decision Tree**
+- **KNN**
+- **Gaussian Naive Bayes**
+- **SVM**
+  
 The models were evaluated using the following metrics:
 
 | Metric | Description |
@@ -90,7 +78,7 @@ The models were evaluated using the following metrics:
 
 **Overall observation:** Logistic Regression provides the strongest overall performance based on AUC and MCC. However, Gaussian Naive Bayes may be preferable when identifying more potential subscribers is the priority. Model selection ultimately depends on the business objective.
 
-### 6. Project Structure
+###  Project Structure
 
 ```text
 BITS-ML-Assignment-2/
@@ -130,7 +118,7 @@ BITS-ML-Assignment-2/
     └── visualizations/
 ```
 
-### 7. How to Run the Application Locally
+###  How to Run the Application Locally
 
 Follow these steps to run the Streamlit application on your local machine.
 
@@ -192,7 +180,7 @@ If it does not open automatically, navigate to:
 http://localhost:8501
 ```
 
-### 8. Test Dataset: Where to Find It
+### Test Dataset: Where to Find It
 
 A sample test dataset is included in the repository:
 
@@ -220,7 +208,7 @@ from your local project directory.
 
 The `test_data.csv` file contains the original test features and actual target column (`y`), which are required to calculate the evaluation metrics.
 
-### 9. Using the Streamlit Application
+### Using the Streamlit Application
 
 Once the application is running:
 
@@ -238,15 +226,7 @@ Once the application is running:
 
 The application allows users to evaluate different classifiers using the same test dataset.
 
-### 10. Live Application
-
-**Streamlit Application:**  
-[Add your deployed Streamlit URL here]
-
-**GitHub Repository:**  
-[Add your GitHub repository URL here]
-
-### 11. Technologies Used
+### Technologies Used
 
 - Python
 - Pandas
@@ -259,7 +239,7 @@ The application allows users to evaluate different classifiers using the same te
 - Jupyter Notebook
 - Git and GitHub
 
-### 12. Conclusion
+### Conclusion
 
 This project demonstrates the implementation and comparative evaluation of five supervised machine learning classification algorithms using the Bank Marketing dataset.
 
